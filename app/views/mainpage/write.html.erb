@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Recipe</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-lumen.css">
+    <link rel="stylesheet" type="text/css" href="assets/write.css">
+  </head>
+
+	<body>
+
+	<div class="container"> 
+		<p><%= flash[:alert] %></p>
+		<h2>레시피 작성하기</h2>
+
+		<form action="/mainpage/write_complete" method="post">
+			<p style="color: #ff0000">분류:
+			<select name="recipe_kind">
+				<option value="한식">한식</option>
+				<option value="일식">일식</option>
+				<option value="중식">중식</option>
+				<option value="양식">양식</option>
+				<option value="퓨전">퓨전</option>
+			</select></p>
+			<p>음식명: <input type="text" name="recipe_title" placeholder="제목을 입력하세요."></p>
+			<p>조리시간: <textarea name="recipe_time" placeholder="내용을 입력하세요."></textarea></p>
+			<p>난이도: 
+			<select name="recipe_level">
+				<option>1</option> 
+				<option>2</option> 
+				<option>3</option> 
+				<option>4</option> 
+				<option>5</option>
+			</select></p>
+			<input type="submit" value="추가하기">
+		</form>
+	</div>
+	</body>

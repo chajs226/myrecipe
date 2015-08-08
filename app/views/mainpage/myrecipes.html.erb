@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Recipe</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-lumen.css">
+		<link rel="stylesheet" type="text/css" href="assets/index.css">
+  </head>
+  <body>
+
+		<!-- main content -->
+		<div class="container">
+			<!-- introduction -->
+			<div class="jumbotron">
+				<h1>내가 만든 레시피!</h1>
+				<p>맛은 보장 못함... -ㅁ-b</p>
+			</div>
+
+		<!-- 글쓰기 버튼 -->
+		<form action="/mainpage/write" method="get">
+  		<button type="submit" class="btn btn-default">글쓰기</button>
+		</form>
+
+		<% @myrecipes.each do |recipe| %>
+		<div style="border: 1px solid #ffffff">
+  		<h4><a href="/mainpage/show/<%= recipe.id %>"><%= recipe.title %></a></h4>
+  		<p style="color: #ff0000"><%= recipe.kind %></p>
+  		<p>조리시간 : <%= recipe.time %></p>
+  		<p>난이도 : <%= recipe.level %></p>
+  		<p>추천수 : <%= recipe.vote %></p>
+  		<p>작성자 아이디 <%= recipe.user_id %></p>
+		</div>
+		<% end %>
+
+  </body>
+</html>

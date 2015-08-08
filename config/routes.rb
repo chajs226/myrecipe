@@ -1,6 +1,9 @@
 Myrecipe::Application.routes.draw do
   root 'mainpage#search'
   get "mainpage/show/:id" => 'mainpage#show'
+	get "mainpage/myrecipes" => 'mainpage#myrecipes'
+	get "mainpage/write" => 'mainpage#write'
+	post "mainpage/write_complete"
   get 'email/email_form' => 'email#email_form' 
   post 'email/email_send' => 'email#email_send'
 

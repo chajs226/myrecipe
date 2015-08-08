@@ -33,7 +33,7 @@
   		</div><!-- /.col-lg-12 -->
 		</div>
 
-		<% @Recipes.each do |recipe| %>
+		<% @recipes.each do |recipe| %>
 		<div style="border: 1px solid #ffffff">
   		<h4><a href="/mainpage/show/<%= recipe.id %>"><%= recipe.title %></a></h4>
   		<p style="color: #ff0000"><%= recipe.kind %></p>
