@@ -33,6 +33,17 @@
   		</div><!-- /.col-lg-12 -->
 		</div>
 
+		<% @Recipes.reverse.each do |recipe| %>
+		<div style="border: 1px solid #ffffff">
+  		<h4><%= recipe.title %></h4>
+  		<p style="color: #ff0000"><%= recipe.kind %></p>
+  		<p>조리시간 : <%= recipe.time %></p>
+  		<p>난이도 : <%= recipe.level %></p>
+  		<p>추천수 : <%= recipe.vote %></p>
+  		<p>작성자 아이디 <%= recipe.user_id %></p>
+		</div>
+		<% end %>
+
 		
 	
 		<!-- Contact -->
