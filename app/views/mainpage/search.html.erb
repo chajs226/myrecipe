@@ -33,9 +33,9 @@
   		</div><!-- /.col-lg-12 -->
 		</div>
 
-		<% @Recipes.reverse.each do |recipe| %>
+		<% @Recipes.each do |recipe| %>
 		<div style="border: 1px solid #ffffff">
-  		<h4><%= recipe.title %></h4>
+  		<h4><a href="/mainpage/show/<%= recipe.id %>"><%= recipe.title %></a></h4>
   		<p style="color: #ff0000"><%= recipe.kind %></p>
   		<p>조리시간 : <%= recipe.time %></p>
   		<p>난이도 : <%= recipe.level %></p>

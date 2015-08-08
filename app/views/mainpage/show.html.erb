@@ -1,2 +1,13 @@
-<h1>Mainpage#show</h1>
-<p>Find me in app/views/mainpage/show.html.erb</p>
+<p><%= flash[:alert] %></p>
+<h2>레시피 상세  보기</h2>
+
+<div style="border: 1px solid #ffffff">
+  <h4><%= @recipe.title %></h4>
+  <p style="color: #ff0000">분류: <%= @recipe.kind %></p>
+	<h5>조리법</h5>
+	<% @recipe_details.each do |recipe_detail| %>
+	<p><%= recipe_detail.id %> <%= recipe_detail.content %></p>
+	<% end %>
+
+  <p><a href="/">전체 리스트 가기</a></p>
+</div>
