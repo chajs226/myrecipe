@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+categories	= ["한식","일식","중식","양식","퓨전"]
+
+categories.each do |category|
+  0.upto(1) do |i|
+    p = Recipe.new
+    p.user_id = i + 1
+    p.kind = category
+    p.title = "#{category}#{i} 음식 "
+		p.time = "0300"
+		p.level = "3"
+		p.vote = i + 3
+    p.save
+  end
+end
