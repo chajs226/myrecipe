@@ -6,6 +6,7 @@ Myrecipe::Application.routes.draw do
 	post "mainpage/write_complete"
 	get "mainpage/edit/:id" => 'mainpage#edit'
 	post "mainpage/edit_complete"
+	get "mainpage/delete_complete/:id" => 'mainpage#delete_complete'
   get 'email/email_form' => 'email#email_form' 
   post 'email/email_send' => 'email#email_send'
 

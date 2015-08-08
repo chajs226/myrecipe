@@ -52,4 +52,11 @@ class MainpageController < ApplicationController
     end
 	end
 
+	def	delete_complete
+		myrecipe = Recipe.find(params[:id])
+		myrecipe.destroy
+		flash[:alert] = "삭제되었습니다."
+		redirect_to "/"
+	end
+
 end
