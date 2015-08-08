@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Recipe</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-lumen.css">
+    <link rel="stylesheet" type="text/css" href="assets/write.css">
+  </head>
+
+	<body>
+
+	<div class="container"> 
+		<p><%= flash[:alert] %></p>
+		<h2>레시피 수정하기</h2>
+
+		<form action="/mainpage/edit_complete" method="post">
+			<input type="hidden" name="id" value="<%= @myrecipe.id %>">
+			<p style="color: #ff0000">분류:
+			<select name="myrecipe_kind">
+				<option value="한식">한식</option>
+				<option value="일식">일식</option>
+				<option value="중식">중식</option>
+				<option value="양식">양식</option>
+				<option value="퓨전">퓨전</option>
+			</select></p>
+			<p>음식명: <input type="text" name="myrecipe_title" value="<%= @myrecipe.title %>"></p>
+			<p>조리시간: <input name="myrecipe_time" value="<%= @myrecipe.time %>"></input></p>
+			<p>난이도: 
+			<select name="myrecipe_level">
+				<option>1</option> 
+				<option>2</option> 
+				<option>3</option> 
+				<option>4</option> 
+				<option>5</option>
+			</select></p>
+			<input type="submit" value="수정하기">
+		</form>
+	</div>
+	</body>

@@ -31,4 +31,25 @@ class MainpageController < ApplicationController
 			redirect_to :back
 		end
 	end
+
+	def edit
+		@myrecipe = Recipe.find(params[:id])
+	end
+
+	def edit_complete
+		myrecipe = Recipe.find(params[:id])
+		myrecipe.kind = params[:myrecipe_kind]
+		myrecipe.title = params[:myrecipe_title]
+		myrecipe.time = params[:myrecipe_time]
+		myrecipe.level = params[:myrecipe_level]
+
+    if myrecipe.save
+      flash[:alert] = "수정되었습니다."
+      redirect_to "/mainpage/show/#{myrecipe.id}"
+    else
+      flash[:alert] = recipe.errors.values.flatten.join(' ')
+      redirect_to :back
+    end
+	end
+
 end
